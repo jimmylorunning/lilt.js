@@ -31,7 +31,6 @@
       boxPos = $(this).offset().top;
       shadowPos = Math.ceil((boxPos - scrollPos) / settings['subtleness']);
       shadowStyle = settings['horizontal-length'] + ' ' + shadowPos + "px " + settings['blur-radius'] + ' ' + settings['spread-radius'] + ' ' + settings['shadow-color'];
-      console.log(shadowStyle);
 
       /* probably should test for vendor supported property: */
       /* http://www.javascriptkit.com/javatutors/setcss3properties.shtml */
@@ -76,13 +75,14 @@
 
 (function ( $ ) {
 
-  $.fn.lightjs_start = function animloop(options){
+  $.fn.lightjs_start = function animloop(){
     requestAnimationFrame(animloop);
-    $(".box").moveShadow({
-      'shadow-color': 'blue'
-    });
+    $(".box").moveShadow($.lightjs_options);
   };
 
 }(jQuery));
 
-// to open call $().lightjs_start(options)
+/*
+$.lightjs_options = {'shadow-color': '#ff0000'};
+$().lightjs_start();
+*/
