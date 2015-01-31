@@ -1,0 +1,15 @@
+body {
+  background-color: #dddddd;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+#box, .box {
+  height: 100px;
+  width: 150px;
+  border: 1px solid #000000;
+  margin-left: 500px;
+  padding: 15px;
+  background-color: #C92389;
+  color: #ffffff;
+  font-size: 2em;
+}
