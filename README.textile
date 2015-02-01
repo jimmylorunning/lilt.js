@@ -1,0 +1,15 @@
+h1. Lilt
+
+a jQuery plugin for adding 3D shadows that move as you scroll!
+
+h2. Demo & Installation Details
+
+"Lilt Demo":http://jimmylocoding.com/lilt
+
+h2. Contributing
+
+Pull requests are welcome!
+
+h2. Thanks
+
+Maintained by: "Jimmy Lo":http://jimmylocoding.com

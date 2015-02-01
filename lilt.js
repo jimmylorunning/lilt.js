@@ -53,13 +53,3 @@
   }
 
 }(jQuery, window, document));
-
-/*
-on page load, run lilt:
-$().lilt();
-
-optional: set default options for your page:
-$().lilt( {'shadow-color': '#ff0000'} );
-
-override individual tags with data attributes
-*/
