@@ -75,10 +75,12 @@
 
 (function ( $ ) {
 
-  $.fn.lilt = function animloop(){
-    requestAnimationFrame(animloop);
-    $(".lilt").liltMoveShadow($.lilt_options);
-  };
+  $.fn.lilt = function(options) {
+    return (function animloop(){
+      requestAnimationFrame(animloop);
+      $(".lilt").liltMoveShadow(options);
+    }());
+  }
 
 }(jQuery));
 
@@ -87,7 +89,7 @@ on page load, run lilt:
 $().lilt();
 
 optional: set default options for your page:
-$.lilt_options = {'shadow-color': '#ff0000'};
+$().lilt( {'shadow-color': '#ff0000'} );
 
 override individual tags with data attributes
 */
