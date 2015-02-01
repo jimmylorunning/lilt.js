@@ -1,7 +1,7 @@
 /*!
- * light.js  v0.1 (https://github.com/jimmylorunning/light.js)
+ * lilt.js  v0.1 (https://github.com/jimmylorunning/lilt.js)
  * Copyright (c) 2015
- * Licensed under MIT (https://github.com/jimmylorunning/light.js/LICENSE)
+ * Licensed under MIT (https://github.com/jimmylorunning/lilt.js/LICENSE)
  */
 
 (function( $ ) {
