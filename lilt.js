@@ -5,7 +5,7 @@
  */
 
 (function( $ ) {
-  $.fn.moveShadow = function(options) {
+  $.fn.liltMoveShadow = function(options) {
     return this.each(function() {
 
       var settings = $.extend({
@@ -75,14 +75,19 @@
 
 (function ( $ ) {
 
-  $.fn.lightjs_start = function animloop(){
+  $.fn.lilt = function animloop(){
     requestAnimationFrame(animloop);
-    $(".box").moveShadow($.lightjs_options);
+    $(".lilt").liltMoveShadow($.lilt_options);
   };
 
 }(jQuery));
 
 /*
-$.lightjs_options = {'shadow-color': '#ff0000'};
-$().lightjs_start();
+on page load, run lilt:
+$().lilt();
+
+optional: set default options for your page:
+$.lilt_options = {'shadow-color': '#ff0000'};
+
+override individual tags with data attributes
 */
