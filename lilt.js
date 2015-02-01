@@ -8,15 +8,14 @@
   $.fn.liltMoveShadow = function(options) {
     return this.each(function() {
 
-      console.log('hahaha');
       var settings = $.extend({
-        'horizontal-length': "-20px",
-        'blur-radius': "5px",
-        'spread-radius': "5px",
+        'horizontal-offset': "-20px",
+        'blur-radius': "40px",
+        'spread-radius': "0px",
         'shadow-color': "#999999",
-        'subtleness': "5"
+        'subtleness': "7"
       }, options, {
-        'horizontal-length': $(this).data("horizontal-length"),
+        'horizontal-offset': $(this).data("horizontal-offset"),
         'blur-radius': $(this).data("blur-radius"),
         'spread-radius': $(this).data("spread-radius"),
         'shadow-color': $(this).data("shadow-color"),
@@ -28,10 +27,10 @@
         settings['subtleness'] = 1;
       }
 
-      scrollPos = $(window).scrollTop();
-      boxPos = $(this).offset().top;
-      shadowPos = Math.ceil((boxPos - scrollPos) / settings['subtleness']);
-      shadowStyle = settings['horizontal-length'] + ' ' + shadowPos + "px " + settings['blur-radius'] + ' ' + settings['spread-radius'] + ' ' + settings['shadow-color'];
+      scrollYPos = $(window).scrollTop();
+      boxYPos = $(this).offset().top;
+      verticalOffset = Math.ceil((boxYPos - scrollYPos) / settings['subtleness']);
+      shadowStyle = settings['horizontal-offset'] + ' ' + verticalOffset + "px " + settings['blur-radius'] + ' ' + settings['spread-radius'] + ' ' + settings['shadow-color'];
 
       /* probably should test for vendor supported property: */
       /* http://www.javascriptkit.com/javatutors/setcss3properties.shtml */
@@ -47,6 +46,7 @@
 (function ( $, window, document, undefined ) {
 
   $.fn.lilt = function(options) {
+    $(".lilt").liltMoveShadow(options);
     $(window).scroll( function() {
       $(".lilt").liltMoveShadow(options);
     });
